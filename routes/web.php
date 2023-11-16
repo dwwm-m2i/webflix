@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +26,4 @@ Route::get('/fiorella/{friend?}', [HomeController::class, 'friend']);
 Route::get('/a-propos', [AboutController::class, 'index']);
 
 // AboutController -> show
+Route::get('/a-propos/{user}', [AboutController::class, 'show']);
