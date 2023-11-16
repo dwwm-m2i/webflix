@@ -6,28 +6,32 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
+    public $team = [
+        [
+            'name' => 'Fiorella',
+            'job' => 'CEO',
+            'image' => 'https://i.pravatar.cc/100?u=Fiorella',
+        ],
+        [
+            'name' => 'Toto',
+            'job' => 'CTO',
+            'image' => 'https://i.pravatar.cc/100?u=Toto',
+        ],
+    ];
+
     public function index()
     {
         return view('about', [
             'title' => 'Webflix',
-            'team' => [
-                [
-                    'name' => 'Fiorella',
-                    'job' => 'CEO',
-                    'image' => 'https://i.pravatar.cc/100?u=Fiorella',
-                ],
-                [
-                    'name' => 'Toto',
-                    'job' => 'CTO',
-                    'image' => 'https://i.pravatar.cc/100?u=Toto',
-                ],
-            ],
+            'team' => $this->team,
         ]);
     }
 
     public function show($user)
     {
-        if (! in_array($user, ['Fiorella', 'Toto'])) {
+        $users = collect($this->team)->pluck('name')->all(); // ['Fiorella', 'Toto'];
+
+        if (! in_array($user, $users)) {
             abort(404); // Renvoie une 404
         }
 
