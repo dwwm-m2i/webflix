@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +23,20 @@ Route::get('/', function () {
             'Call of Duty',
             'FC 24',
         ],
+    ]);
+});
+
+// {friend} = Paramètre obligatoire
+// {friend?} = Paramètre optionnel
+Route::get('/fiorella/{friend?}', function (Request $request, $friend = null) {
+    // dump($friend);
+    dump($_GET); // Interdit avec Laravel
+    dump($request->color); // $_GET['color'] ?? null;
+    dump(request('color')); // $_GET['color'] ?? null;
+
+    return view('presentation', [
+        'age' => Carbon::parse('2019-12-31')->age,
+        'friend' => ucfirst($friend),
+        'color' => $request->color,
     ]);
 });
