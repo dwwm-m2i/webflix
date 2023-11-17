@@ -10,7 +10,7 @@
         <p>Tu n'es pas majeur(e).</p>
     @endif
 
-    @dump($color)
+    <p>Couleur choisie : {{ $color }}</p>
 
     @if ($friend)
     <p>Fiorella joue avec {{ $friend }}</p>

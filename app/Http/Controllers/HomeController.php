@@ -27,7 +27,8 @@ class HomeController extends Controller
         return view('presentation', [
             'age' => Carbon::parse('2019-12-31')->age,
             'friend' => ucfirst($friend),
-            'color' => $request->color,
+            // 'color' => $request->color,
+            'color' => $request->input('color', 'rouge'),
         ]);
     }
 }
