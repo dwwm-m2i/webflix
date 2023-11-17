@@ -21,11 +21,13 @@ class CategoryController extends Controller
         return view('categories/create');
     }
 
-    public function store()
+    // Code qui se fait quand on envoie le formulaire
+    public function store(Request $request)
     {
         // Insertion en base de données
         $category = new Category();
-        $category->name = 'Action';
+        // $request->name est le contenu du input name
+        $category->name = $request->name; // $_POST['name']
         $category->save(); // INSERT INTO categories en Laravel
 
         return redirect('/categories');
