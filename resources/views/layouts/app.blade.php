@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
 <body class="font-[Nunito] flex flex-col justify-between h-screen">
-    <div class="bg-gray-800 text-gray-300 py-8">
+    <div class="bg-gray-800 text-gray-300 py-8 shadow-xl">
         <div class="max-w-5xl mx-auto px-3">
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl">
