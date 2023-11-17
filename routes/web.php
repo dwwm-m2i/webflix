@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,7 @@ Route::get('/a-propos', [AboutController::class, 'index']);
 
 // AboutController -> show
 Route::get('/a-propos/{user}', [AboutController::class, 'show']);
+
+// CRUD Catégories
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories/creer', [CategoryController::class, 'create']);
