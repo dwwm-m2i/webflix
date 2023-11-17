@@ -31,4 +31,7 @@ Route::get('/a-propos/{user}', [AboutController::class, 'show']);
 
 // CRUD Catégories
 Route::get('/categories', [CategoryController::class, 'index']);
+// Afficher le formulaire
 Route::get('/categories/creer', [CategoryController::class, 'create']);
+// Traiter le formulaire
+Route::post('/categories/creer', [CategoryController::class, 'store']);
