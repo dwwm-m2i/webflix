@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,9 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/creer', [CategoryController::class, 'create']);
 // Traiter le formulaire
 Route::post('/categories/creer', [CategoryController::class, 'store']);
+
+// CRUD Films
+Route::get('/films', [MovieController::class, 'index']);
+Route::get('/films/creer', [MovieController::class, 'create']);
+Route::post('/films/creer', [MovieController::class, 'store']);
+Route::get('/film/{id}', [MovieController::class, 'show']);

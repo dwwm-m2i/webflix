@@ -186,6 +186,8 @@ return [
 
     'attributes' => [
         'name' => 'nom',
+        'title' => 'titre',
+        'duration' => 'durée',
     ],
 
 ];

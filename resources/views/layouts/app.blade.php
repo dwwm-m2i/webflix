@@ -17,6 +17,7 @@
                 <nav class="space-x-3">
                     <a class="hover:underline underline-offset-8" href="/">Accueil</a>
                     <a class="hover:underline underline-offset-8" href="/categories">Catégories</a>
+                    <a class="hover:underline underline-offset-8" href="/films">Films</a>
                     <a class="hover:underline underline-offset-8" href="/fiorella">Présentation</a>
                     <a class="hover:underline underline-offset-8" href="/fiorella/emma?color=bleu">Fiorella Bleue et Emma</a>
                     <a class="hover:underline underline-offset-8" href="/a-propos">A propos</a>
