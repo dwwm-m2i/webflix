@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-3xl mb-3">A propos de {{ $title }}</h1>
+    <h1 class="text-3xl text-center mb-6">A propos de {{ $title }}</h1>
 
-    <ul>
+    <div class="grid grid-cols-3">
     @foreach ($team as $member)
-        <li>
+        <div class="text-center">
             <a href="/a-propos/{{ $member['name'] }}">
-                <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}">
+                <img class="mx-auto" src="{{ $member['image'] }}" alt="{{ $member['name'] }}">
                 {{ $member['name'] }}
                 ({{ $member['job'] }})
             </a>
-        </li>
+        </div>
     @endforeach
-    </ul>
+    </div>
 @endsection
