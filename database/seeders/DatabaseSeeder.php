@@ -36,10 +36,30 @@ class DatabaseSeeder extends Seeder
         // withoutVerifying() -> Désactiver le HTTPS sous Windows
         $genres = Http::withoutVerifying()
             ->get($baseUrl.'/genre/movie/list?language=fr-FR&api_key='.$apiKey)->json('genres');
+            // genres est un index de l'API
 
         Category::factory()->createMany($genres);
 
         // Films
+        $movies = Http::withoutVerifying()
+            ->get($baseUrl.'/movie/now_playing?language=fr-FR&api_key='.$apiKey)->json('results');
+
+        foreach ($movies as $movie) {
+            // On fait une requête sur l'API pour chaque film afin d'avoir plus de détails
+            $movie = Http::withoutVerifying()
+                ->get($baseUrl.'/movie/'.$movie['id'].'?language=fr-FR&append_to_response=videos&api_key='.$apiKey)
+                ->json();
+
+            Movie::factory()->create([
+                'title' => $movie['title'],
+                'synopsis' => $movie['overview'],
+                'duration' => $movie['runtime'],
+                'cover' => 'https://image.tmdb.org/t/p/w500'.$movie['poster_path'],
+                'released_at' => $movie['release_date'],
+                'youtube' => $movie['videos']['results'][0]['key'] ?? null,
+                'category_id' => $movie['genres'][0]['id'] ?? null,
+            ]);
+        }
 
         // \App\Models\User::factory(10)->create();
 
