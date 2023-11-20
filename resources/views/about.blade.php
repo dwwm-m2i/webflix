@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>A propos de {{ $title }}</h1>
+    <h1 class="text-3xl mb-3">A propos de {{ $title }}</h1>
 
     <ul>
     @foreach ($team as $member)
