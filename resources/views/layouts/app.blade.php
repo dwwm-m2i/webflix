@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-3">
+    <div class="max-w-5xl mx-auto px-3 py-8 w-full">
         @yield('content')
     </div>
 

@@ -12,7 +12,7 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="block">Nom</label>
-            <input type="text" name="name" id="name" value="{{ old('name') }}" class="rounded shadow border-gray-300">
+            <input type="text" name="name" id="name" value="{{ old('name') }}" class="rounded shadow border-gray-300 w-full">
         </div>
         <button class="px-4 py-2 text-sm bg-blue-500 hover:bg-blue-300 duration-200 text-white rounded-full shadow-sm">Sauvegarder</button>
     </form>
