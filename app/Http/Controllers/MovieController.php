@@ -41,13 +41,13 @@ class MovieController extends Controller
         ]);
 
         $movie = new Movie();
-        $movie->title = $request->input('title');
-        $movie->synopsis = $request->input('synopsis');
-        $movie->duration = $request->input('duration');
-        $movie->youtube = $request->input('youtube');
+        $movie->title = $request->title;
+        $movie->synopsis = $request->synopsis;
+        $movie->duration = $request->duration;
+        $movie->youtube = $request->youtube;
         $movie->cover = 'https://image.tmdb.org/t/p/original/9uqCaPEIep4iBG3U4AqSP20LGjq.jpg';
-        $movie->released_at = $request->input('released_at');
-        $movie->category_id = $request->input('category');
+        $movie->released_at = $request->released_at;
+        $movie->category_id = $request->category;
         $movie->save();
 
         return redirect('/films');
