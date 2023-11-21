@@ -41,12 +41,15 @@ class DatabaseSeeder extends Seeder
         Category::factory()->createMany($genres);
 
         // Films
+        // 20 films (page 1)
         $movies1 = Http::withoutVerifying()
             ->get($baseUrl.'/movie/now_playing?language=fr-FR&api_key='.$apiKey)->json('results');
 
+        // 20 films (page 2)
         $movies2 = Http::withoutVerifying()
             ->get($baseUrl.'/movie/now_playing?language=fr-FR&page=2&api_key='.$apiKey)->json('results');
-        
+
+        // 40 films
         $movies = [...$movies1, ...$movies2]; // [1, 2, 3, 4] au lieu de [[1, 2], [3, 4]]
 
         foreach ($movies as $movie) {
