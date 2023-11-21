@@ -14,12 +14,13 @@
                     <h3 class="text-sm text-gray-600 underline group-hover:no-underline">{{ $movie->title }}</h3>
                     <p class="text-sm mb-3">
                         @if ($movie->released_at)
-                        {{ $movie->released_at }} |
+                        {{ $movie->released_at->diffForHumans() }} |
+                        {{ $movie->released_at->translatedFormat('d F Y') }} |
                         @endif
                         @if ($movie->category_id)
-                        {{ $movie->category_id }} |
+                        {{ $movie->category->name }} |
                         @endif
-                        {{ $movie->duration }}
+                        {{ $movie->duration() }}
                     </p>
                 </a>
             </div>

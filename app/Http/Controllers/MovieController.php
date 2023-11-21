@@ -11,7 +11,8 @@ class MovieController extends Controller
     public function index()
     {
         return view('movies/index', [
-            'movies' => Movie::all(),
+            // Movie::all() fonctionne mais moins optimisé
+            'movies' => Movie::with('category')->get(),
         ]);
     }
 
