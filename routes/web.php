@@ -42,3 +42,5 @@ Route::get('/films', [MovieController::class, 'index']);
 Route::get('/films/creer', [MovieController::class, 'create']);
 Route::post('/films/creer', [MovieController::class, 'store']);
 Route::get('/film/{id}', [MovieController::class, 'show']);
+Route::get('/film/{id}/modifier', [MovieController::class, 'edit']);
+Route::post('/film/{id}/modifier', [MovieController::class, 'update']);

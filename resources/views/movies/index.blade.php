@@ -23,6 +23,9 @@
                         {{ $movie->duration() }}
                     </p>
                 </a>
+                <div class="mx-3 mb-3">
+                    <a href="/film/{{ $movie->id }}/modifier">Modifier</a>
+                </div>
             </div>
         @endforeach
     </div>
