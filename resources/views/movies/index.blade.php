@@ -24,9 +24,9 @@
                             {{ $movie->duration() }}
                         </p>
                     </a>
-                    <div class="mx-3 mb-3">
-                        <a class="text-sm bg-gray-500 px-2 py-1 text-gray-200" href="/film/{{ $movie->id }}/modifier">Modifier</a>
-                        <a class="text-sm bg-red-500 px-2 py-1 text-gray-200" href="/film/{{ $movie->id }}/supprimer" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le film {{ $movie->title }} ?')">Supprimer</a>
+                    <div class="mx-3 mb-3 flex justify-between gap-2">
+                        <a class="text-sm bg-gray-500 px-2 py-1 text-gray-200 w-1/2 text-center" href="/film/{{ $movie->id }}/modifier">Modifier</a>
+                        <a class="text-sm bg-red-500 px-2 py-1 text-gray-200 w-1/2 text-center" href="/film/{{ $movie->id }}/supprimer" onclick='return confirm("Êtes-vous sûr de vouloir supprimer le film {{ $movie->title }} ?")'>Supprimer</a>
                     </div>
                 </div>
             </div>
