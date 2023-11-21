@@ -33,4 +33,15 @@ class LoginController extends Controller
             'email' => 'Identifiants incorrects.',
         ])->onlyInput('email');
     }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/films');
+    }
 }

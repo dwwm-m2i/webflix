@@ -50,3 +50,4 @@ Route::get('/film/{id}/supprimer', [MovieController::class, 'destroy']);
 // Authentification
 Route::get('/login', [LoginController::class, 'login']);
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);

@@ -21,6 +21,11 @@
                     <a class="hover:underline underline-offset-8" href="/fiorella">Présentation</a>
                     <a class="hover:underline underline-offset-8" href="/fiorella/emma?color=bleu">Fiorella Bleue et Emma</a>
                     <a class="hover:underline underline-offset-8" href="/a-propos">A propos</a>
+                    @auth
+                        <a class="hover:underline underline-offset-8" href="/logout">{{ Auth::user()->email }}</a>
+                    @else
+                        <a class="hover:underline underline-offset-8" href="/login">Connexion</a>
+                    @endauth
                 </nav>
             </div>
         </div>
