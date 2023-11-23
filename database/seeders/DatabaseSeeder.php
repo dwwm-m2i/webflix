@@ -21,6 +21,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'matthieu@boxydev.com',
         ]);
 
+        User::factory()->create([
+            'email' => 'fiorella@boxydev.com',
+        ]);
+
         // SANS API
         // Category::factory(9)->create();
         // Category::factory()->create(['name' => 'Action']);
@@ -71,6 +75,8 @@ class DatabaseSeeder extends Seeder
                 'released_at' => $movie['release_date'],
                 'youtube' => $movie['videos']['results'][0]['key'] ?? null,
                 'category_id' => $movie['genres'][0]['id'] ?? null,
+                // Le film appartient à un utilisateur aléatoire
+                'user_id' => User::all()->random(),
             ]);
         }
 
